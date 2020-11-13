@@ -1,5 +1,5 @@
 # InforSec
-Something about information security.
+关于信息安全的一些内容。
 
 学习图谱
 ---
