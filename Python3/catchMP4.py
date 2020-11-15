@@ -2,8 +2,8 @@
 import requests
 import re
 
-url = 'https://www.xylink.com'
-url_src = requests.get(url)                                     #获取html
+url = 'https://www.x.com'
+url_src = requests.get(url)                                     #获取 html
 mp4List = re.findall(r'https://.{10,100}\.mp4',url_src.text)    #获取 mp4 url
 print(mp4List)
 num = 0
