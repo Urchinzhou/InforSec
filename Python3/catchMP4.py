@@ -1,4 +1,4 @@
-```python
+
 import requests
 import re
 
@@ -16,5 +16,5 @@ for mp4Url in mp4List:
             if chunk:
                 f.write(chunk)
         print("%d下载完成" %num)
-```
+
 
