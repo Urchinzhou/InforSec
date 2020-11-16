@@ -1,3 +1,4 @@
 # Android's Security Model
 ## Android's Architecture
-[Android's Architecture](/Android/src/android_arc.jpg)
+ <img src="/Android/src/android_arc.png" width = "300" height = "300" alt="Anroid's Architecture" align=center />
+ 
