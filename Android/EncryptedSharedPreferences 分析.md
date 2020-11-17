@@ -4,13 +4,6 @@
 
 EncryptedSharedPreferenes 是 androidx 下安全组件中的加密类，实现`SharedPreferences`的键值对加密。
 
-对它的分析，主要涉及以下几点：
-
-- 密钥管理
-- 加密算法
-- 工程实现
-- 源码分析
-
 开发者文档中提供了`SharedPreferences`加密键值对的实例代码，其中使用`MasterKeys`来进行密钥管理，而在 [MasterKeys](https://developer.android.com/reference/androidx/security/crypto/MasterKeys?hl=zh-cn) 的文档中提示该类已废弃，应使用`MasterKey.Builder`来管理主密钥，示例如下
 
 ```java
@@ -32,8 +25,6 @@ EncryptedSharedPreferenes 是 androidx 下安全组件中的加密类，实现`S
          EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
          EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM);
 ```
-
-### 密钥管理
 
 `KeyGenParameterSpec`是`android.security.keystore`中的类，用于指定密钥的参数，相当于先制定一个规范，规范中指明密钥别名、密钥用途、加密模式等密钥属性，然后在生成密钥的时候直接使用指定的规范。我们重点需要关注的是，主密钥的生成和存储，也就是下面调用的`MasterKey.Builder`方法。
 
