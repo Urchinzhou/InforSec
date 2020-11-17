@@ -4,7 +4,20 @@
 
 EncryptedSharedPreferenes 是 androidx 下安全组件中的加密类，实现`SharedPreferences`的键值对加密。
 
-开发者文档中提供了`SharedPreferences`加密键值对的实例代码，其中使用`MasterKeys`来进行密钥管理，而在 [MasterKeys](https://developer.android.com/reference/androidx/security/crypto/MasterKeys?hl=zh-cn) 的文档中提示该类已废弃，应使用`MasterKey.Builder`来管理主密钥，示例如下
+开发者文档中提供了`SharedPreferences`加密键值对的实例代码，其中使用`MasterKeys`来进行密钥管理，而在 [MasterKeys](https://developer.android.com/reference/androidx/security/crypto/MasterKeys?hl=zh-cn) 的文档中提示该类已废弃，
+
+```java
+public final class MasterKeys
+extends Object
+
+java.lang.Object
+   ↳	androidx.security.crypto.MasterKeys
+
+This class is deprecated.
+Use MasterKey.Builder to work with master keys.
+```
+
+应使用`MasterKey.Builder`来管理主密钥，示例如下（ps:写下本文时，AOSP示例中用的还是MasterKeys）
 
 ```java
  // this is equivalent to using deprecated MasterKeys.AES256_GCM_SPEC
@@ -77,5 +90,5 @@ public KeyGenParameterSpec build() {
 }
 ```
 
-而后返回到`buildOnM()`中，调用`MasterKeys.getOrCreate(mKeyGenParameterSpec)`创建主密钥并返回密钥别名字符串，然后逐级返回上层调用方法。
+而后返回到`buildOnM()`中，调用`MasterKeys.getOrCreate(mKeyGenParameterSpec)`创建主密钥并返回密钥别名字符串。
 
