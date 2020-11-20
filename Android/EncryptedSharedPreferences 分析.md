@@ -1,4 +1,4 @@
-# EncryptedSharedPreferenes 分析
+# EncryptedSharedPreferenes 分析(一)
 
 [EncryptedSharedPreferences 源码](https://github.com/androidx/androidx/blob/androidx-master-dev/security/crypto/src/main/java/androidx/security/crypto/EncryptedSharedPreferences.java)
 
@@ -90,5 +90,5 @@ public KeyGenParameterSpec build() {
 }
 ```
 
-而后返回到`buildOnM()`中，调用`MasterKeys.getOrCreate(mKeyGenParameterSpec)`创建主密钥并返回密钥别名字符串。
+而后返回到`buildOnM()`中，调用`MasterKeys.getOrCreate(mKeyGenParameterSpec)`创建主密钥并返回密钥别名字符串，所以实际用来创建密钥的类还是`Masterkeys`。而在`MasterKeys`内部调用了`javax.crypto.KeyGenerator`的`generateKey`方法。
 

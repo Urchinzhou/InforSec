@@ -1,8 +1,6 @@
 # 关于 xlog 加密处理分析
 
-xlog 使用微型加密算法（TEA，Tiny Encryption Algorithm）对日志数据进行加密，使用 ECDH 密钥交换算法进行对称密钥的协商，对称密钥以数组形式存储在栈区，声明为 `LogCrypt` 类的私有字段。
-
-会话密钥长度与椭圆曲线参数相关，xlog 中使用 16 Bytes 密钥。
+TEA（Tiny Encryption Algorithm）是一种简单高效的加密算法，以加解密速度快、简单高效著称。TEA 算法每次加解密运算操作 64-bits（8 Bytes），采用 128-bits（16 Bytes）密钥，算法采用迭代形式，推荐的迭代轮数是 64 轮或 32 轮。微信的 xlog 模块为了进一步加快速度，采取 16 轮运算。
 
 ### 相关接口
 
