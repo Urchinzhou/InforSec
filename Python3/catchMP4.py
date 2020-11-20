@@ -1,21 +1,19 @@
-#下载 url 页面的 mp4 文件
-
 import requests
 import re
+import os
 
-url = 'https://www.x.com'
-url_src = requests.get(url)                                     #获取 html
-mp4List = re.findall(r'https://.{10,100}\.mp4',url_src.text)    #获取 mp4 url
+url = 'https://www.xxxxx.com'
+url_src = requests.get(url)
+mp4List = re.findall(r'https://.{10,100}\.mp4',url_src.text)
+mp4List = list(set(mp4List))
 print(mp4List)
-num = 0
+
 for mp4Url in mp4List:
-    num += 1
-    req = requests.get(mp4Url,stream=True)                      #获取 mp4 资源
-    with(open("%d.mp4" %num,'wb')) as f:
-        print("%d下载开始" %num)
+    name = os.path.basename(mp4Url)
+    req = requests.get(mp4Url,stream=True)
+    with(open("%s" %name,'wb')) as f:
+        print("%s downloading" %name)
         for chunk in req.iter_content(chunk_size=1024*1024):
             if chunk:
                 f.write(chunk)
-        print("%d下载完成" %num)
-
-
+        print("%s finish" %name)
