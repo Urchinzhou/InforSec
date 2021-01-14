@@ -13,8 +13,8 @@ on:
       - main.py
 
 env:
-  GITHUB_NAME: yihong0618
-  GITHUB_EMAIL: zouzou0208@gmail.com
+  GITHUB_NAME: Urchinzhou
+  GITHUB_EMAIL: urchinzhou@gmail.com
 
 jobs:
   sync:
@@ -48,8 +48,8 @@ jobs:
       - name: Generate new md # if you fork or clone this repo, please delete the curl line unless you know why
         run: |
           source venv/bin/activate
-          python main.py ${{ secrets.G_T }} ${{ github.repository }} --issue_numbe '${{ github.event.issue.number }}'
-          curl -H "Content-Type:application/json" -X POST -d '{"inputs": {}, "ref":"main"}' https://api.github.com/repos/yihong0618/2021/actions/workflows/4756004/dispatches -H "Authorization: token ${{ secrets.G_T }}"
+          python main.py ${{ secrets.X_A }} ${{ github.repository }} --issue_numbe '${{ github.event.issue.number }}'
+          curl -H "Content-Type:application/json" -X POST -d '{"inputs": {}, "ref":"main"}' https://api.github.com/repos/yihong0618/2021/actions/workflows/4756004/dispatches -H "Authorization: token ${{ secrets.X_A }}"
         
       - name: Push README
         uses: github-actions-x/commit@v2.6
