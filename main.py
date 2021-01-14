@@ -8,7 +8,7 @@ MD_HEAD = """## Gitblog
 My personal blog using issues and GitHub Actions
 """
 
-BACKUP_DIR = "Backup"
+BACKUP_DIR = "BACKUP"
 ANCHOR_NUMBER = 5
 TOP_ISSUES_LABELS = ["Top"]
 TODO_ISSUES_LABELS = ["TODO"]
