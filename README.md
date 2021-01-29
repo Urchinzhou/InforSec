@@ -1,11 +1,11 @@
 ## Gitblog
 My personal blog using issues and GitHub Actions
 ## 最近更新
+- [SQLCipher 代替 SQLite](https://github.com/Urchinzhou/gitblog/issues/11)--2021-01-29
 - [如何理解平均负载](https://github.com/Urchinzhou/gitblog/issues/10)--2021-01-14
 - [关于数据分片与分段](https://github.com/Urchinzhou/gitblog/issues/9)--2021-01-14
 - [关于gcc编译时函数符号导出的问题](https://github.com/Urchinzhou/gitblog/issues/8)--2021-01-14
 - [TCP 与粘包问题](https://github.com/Urchinzhou/gitblog/issues/7)--2021-01-14
-- [善用阅读技巧：检视阅读](https://github.com/Urchinzhou/gitblog/issues/6)--2021-01-14
 ## 2020
 - [如何理解平均负载](https://github.com/Urchinzhou/gitblog/issues/10)--2021-01-14
 - [关于数据分片与分段](https://github.com/Urchinzhou/gitblog/issues/9)--2021-01-14
