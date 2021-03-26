@@ -1,5 +1,5 @@
 ## Gitblog
-由于 GitHub 访问速度较慢，导致以 issue 形式发布内容的效率，因此暂停更新，改为 GitHub page 更新。
+暂停更新，改为 [blog](urchinzhou.github.io) 更新。
 ## 最近更新
 - [SQLCipher 代替 SQLite](https://github.com/Urchinzhou/gitblog/issues/11)--2021-01-29
 - [如何理解平均负载](https://github.com/Urchinzhou/gitblog/issues/10)--2021-01-14
